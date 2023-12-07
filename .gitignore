@@ -3143,9 +3143,9 @@ class aggregated_user:
         return data
 
     def year_quater_wise_total_user_count():
-        gopi = psycopg2.connect(host='localhost', user='postgres',
-                                password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select year, quater, sum(user_count) as user_count 
                             from aggregated_user
                             group by quater, year
@@ -3161,9 +3161,9 @@ class aggregated_user:
         return data
 
     def year_brand_wise_total_user_count():
-        gopi = psycopg2.connect(host='localhost', user='postgres',
-                                password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select year, user_brand, sum(user_count) as user_count 
                             from aggregated_user
                             group by user_brand, year
@@ -3179,9 +3179,9 @@ class aggregated_user:
         return data
     
     def quater_brand_wise_total_user_count():
-        gopi = psycopg2.connect(host='localhost', user='postgres',
-                                password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select quater, user_brand, sum(user_count) as user_count 
                             from aggregated_user
                             group by user_brand, quater
@@ -3198,9 +3198,9 @@ class aggregated_user:
 
 
     def selectyear_quater_wise_total_user_count(year_option):
-        gopi = psycopg2.connect(host='localhost', user='postgres',
-                                password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select year, quater, sum(user_count) as user_count 
                             from aggregated_user
                             where year=%s
@@ -3217,9 +3217,9 @@ class aggregated_user:
         return data
 
     def selectyear_brand_wise_total_user_count(year_option):
-        gopi = psycopg2.connect(host='localhost', user='postgres',
-                                password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select year, user_brand, sum(user_count) as user_count 
                             from aggregated_user
                             where year=%s
@@ -3236,9 +3236,9 @@ class aggregated_user:
         return data
 
     def selectyear_quater_brand_wise_total_user_count(year_option):
-        gopi = psycopg2.connect(
-            host='localhost', user='postgres', password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select year, quater, user_brand, sum(user_count) as user_count 
                             from aggregated_user
                             where year=%s
@@ -3256,9 +3256,9 @@ class aggregated_user:
 
 
     def selectyear_selectstate_brand_wise_total_user_count(state_option, year_option):
-        gopi = psycopg2.connect(host='localhost', user='postgres',
-                                password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select state, year, user_brand, sum(user_count) as user_count 
                                 from aggregated_user
                                 where state=%s and year=%s
@@ -3275,9 +3275,9 @@ class aggregated_user:
         return data
 
     def selectyear_selectstate_quater_brand_wise_total_user_count(state_option, year_option, quater_option):
-        gopi = psycopg2.connect(host='localhost', user='postgres',
-                                password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select state, year, quater, user_brand, sum(user_count) as user_count 
                                 from aggregated_user
                                 where state=%s and year=%s and quater=%s
@@ -3294,9 +3294,9 @@ class aggregated_user:
         return data
 
     def selectyear_selectquater_state_wise_total_user_count(year_option, quater_option):
-        gopi = psycopg2.connect(
-            host='localhost', user='postgres', password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select state, year, quater, sum(user_count) as user_count 
                             from aggregated_user
                             where year=%s and quater=%s
@@ -3315,9 +3315,9 @@ class aggregated_user:
         return data
 
     def selectyear_selectquater_brand_wise_total_user_count(year_option, quater_option):
-        gopi = psycopg2.connect(
-            host='localhost', user='postgres', password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select year, quater, user_brand, sum(user_count) as user_count 
                             from aggregated_user
                             where year=%s and quater=%s
@@ -3336,9 +3336,9 @@ class aggregated_user:
     # quater - wise
 
     def quater_wise_total_user_count():
-        gopi = psycopg2.connect(host='localhost', user='postgres',
-                                password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select quater, sum(user_count) as user_count 
                                 from aggregated_user
                                 group by quater
@@ -3353,9 +3353,9 @@ class aggregated_user:
         return data
 
     def selectquater_year_wise_total_user_count(quater_option):
-        gopi = psycopg2.connect(host='localhost', user='postgres',
-                                password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select year, quater, sum(user_count) as user_count 
                             from aggregated_user
                             where quater=%s
@@ -3372,9 +3372,9 @@ class aggregated_user:
         return data
 
     def selectquater_brand_wise_total_user_count(quater_option):
-        gopi = psycopg2.connect(host='localhost', user='postgres',
-                                password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select quater, user_brand, sum(user_count) as user_count 
                             from aggregated_user
                             where quater=%s
@@ -3391,9 +3391,9 @@ class aggregated_user:
         return data
 
     def selectquater_year_brand_wise_total_user_count(quater_option):
-        gopi = psycopg2.connect(
-            host='localhost', user='postgres', password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select year, quater, user_brand, sum(user_count) as user_count 
                             from aggregated_user
                             where quater=%s
@@ -3413,9 +3413,9 @@ class aggregated_user:
     # brand - wise
 
     def brand_wise_total_user_count():
-        gopi = psycopg2.connect(host='localhost', user='postgres',
-                                password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select user_brand, sum(user_count) as user_count 
                             from aggregated_user
                             group by user_brand
@@ -3431,9 +3431,9 @@ class aggregated_user:
         return data
 
     def selectbrand_state_wise_total_user_count(brand_option):
-        gopi = psycopg2.connect(
-            host='localhost', user='postgres', password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+                host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select state, user_brand, sum(user_count) as user_count 
                             from aggregated_user
                             where user_brand=%s
@@ -3452,9 +3452,9 @@ class aggregated_user:
         return data
 
     def selectbrand_year_wise_total_user_count(brand_option):
-        gopi = psycopg2.connect(
-            host='localhost', user='postgres', password='root', database='phonepe')
-        cursor = gopi.cursor()
+        mydb = psycopg2.connect(
+            host='localhost', user='postgres', password='kalai', database='phonepe')
+        cursor = mydb.cursor()
         cursor.execute(f"""select year, user_brand, sum(user_count) as user_count 
                             from aggregated_user
                             where user_brand=%s
@@ -6553,7 +6553,7 @@ if option:
             data_load.sql_table_creation()
             data_load.data_migration()
             st.success('Data successfully Migrated to the SQL Database')
-                   
+                     
 
     elif option == 'Data Insights and Exploration':
         s = state_list()
